@@ -7,25 +7,28 @@ header('Access-Control-Allow-Origin: *');
 
 
   include_once '../../config/Database.php';
-  include_once '../../models/Category.php';
+  include_once '../../models/Quote.php';
 
   // Instantiate DB & connect
   $database = new Database();
   $db = $database->connect();
 
   // Instantiate blog post object
-  $post = new Category($db);
+  $post = new Quote($db);
 
 
   //Get raw posted data
 
   $data = json_decode(file_get_contents("php://input"));
 
- 
+ $post->quote = $data->quote;
+ $post->id = $data->id;
+ $post->category_id = $data->category_id;
+ $post->author_id = $data->author_id;
 
 
 
-  $post->category = $data->category;
+  
 
   
 
