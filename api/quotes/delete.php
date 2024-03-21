@@ -24,10 +24,10 @@ header('Access-Control-Allow-Origin: *');
   // Delete post
   if($post->delete()) {
     echo json_encode(
-      array('message' => 'Post Deleted')
+      array('message' => 'Quote Deleted')
     );
   } else {
     echo json_encode(
-      array('message' => 'Post Not Deleted')
+      array('message' => 'Quote Not Deleted')
     );
   }

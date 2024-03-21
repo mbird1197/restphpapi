@@ -6,13 +6,9 @@ class Author {
 
     // Post Properties
     public $id;
-    
-    
   
-
     public $author;
     
-
     // Constructor with DB
     public function __construct($db) {
       $this->conn = $db;

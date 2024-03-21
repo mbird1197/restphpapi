@@ -33,13 +33,13 @@ header('Access-Control-Allow-Origin: *');
   if($post->update()){
 
     echo json_encode(
-        array('message' => 'Post Updated')
+        array('message' => 'Category Updated')
     );
     }
     else{
 
         echo json_encode(
-            array('message' => "Post Not Updated")
+            array('message' => "Category Not Updated")
         );
 
     }

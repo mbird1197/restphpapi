@@ -30,22 +30,24 @@ header('Access-Control-Allow-Origin: *');
       $post_item = array(
         'id' => $id,
         'quote' => $quote,
-        'author' => $author_id,
-        'category' => $category_id
-        
+        'author_id' => $author_id,
+        'category_id' => $category_id,
+        'author' => $author,
+        'category' => $category,
       );
 
       // Push to "data"
-      array_push($posts_arr, $post_item);
+      array_push($posts_arr, $pos_post_item);
       // array_push($posts_arr['data'], $post_item);
     }
 
     // Turn to JSON & output
     echo json_encode($posts_arr);
+   
 
   } else {
     // No Posts
     echo json_encode(
-      array('message' => 'No Posts Found')
+      array('message' => 'No Quotes Found')
     );
   }

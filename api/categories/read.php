@@ -44,6 +44,6 @@ header('Access-Control-Allow-Origin: *');
   } else {
     // No Posts
     echo json_encode(
-      array('message' => 'No Posts Found')
+      array('message' => 'No Category Found')
     );
   }

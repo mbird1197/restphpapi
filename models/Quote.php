@@ -11,7 +11,8 @@ class Quote {
       public $author_id;
       public $category_id;
       
-    
+    public $author;
+    public $category;
         
 
     // Constructor with DB
@@ -47,7 +48,7 @@ class Quote {
                                   WHERE
                                     p.id = ?
                                     p.quote = ?
-                                  LIMIT 0,1';
+                                  LIMIT 0,25';
 
         // Prepare statement
         $stmt = $this->conn->prepare($query);
@@ -72,7 +73,9 @@ class Quote {
   public function update() {
     // Create query
     $query = 'UPDATE ' . $this->table . '
-                          SET quote = :quote
+                          SET quote = :quote,
+                          category_id = :category_id,
+                          author_id = :author_id,
                           WHERE id = :id';
 
     // Prepare statement
